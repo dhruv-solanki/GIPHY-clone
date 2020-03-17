@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFS with Vue JS</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .gif-box {
+            border: 1px solid black;
+            margin-top: 5%;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="text-center card p-5 bg-dark text-light">
+            <h1>Welcome to GIPHY Clone</h1>
+        </div>
+        
+        <!-- Searching GIPHS -->
+        <h2 class="mt-5">Search GIFS</h2>
+        <input type="text" class="form-control" placeholder="Search your query" name="query" v-model="query">
+        <gif-grid :gifs="searchedGifs"></gif-grid>
+        
+
+        <!-- Trending GIPHS -->
+        <h2 class="mt-5">Trending GIFS</h2>
+        <gif-grid :gifs="trendingGifs"></gif-grid>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="gifs.js"></script>
+</body>
+</html>
